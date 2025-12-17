@@ -1,0 +1,330 @@
+{
+  "info": {
+    "name": "Online Library System - Microservices",
+    "description": "Complete CRUD testing for Catalog, User, and Order services",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Catalog Service",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": [""]
+            }
+          }
+        },
+        {
+          "name": "READ - Get All Books",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/catalog",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["catalog"]
+            }
+          }
+        },
+        {
+          "name": "READ - Get Single Book",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/catalog/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["catalog", "1"]
+            }
+          }
+        },
+        {
+          "name": "CREATE - Add New Book",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Clean Code\",\n  \"author\": \"Robert C. Martin\",\n  \"isbn\": \"9780132350884\",\n  \"published_year\": 2008,\n  \"genre\": \"Technology\",\n  \"available_copies\": 10\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/catalog",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["catalog"]
+            }
+          }
+        },
+        {
+          "name": "UPDATE - Update Book",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"available_copies\": 20\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/catalog/6",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["catalog", "6"]
+            }
+          }
+        },
+        {
+          "name": "DELETE - Remove Book",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/catalog/6",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["catalog", "6"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "User Service",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5001/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5001",
+              "path": [""]
+            }
+          }
+        },
+        {
+          "name": "READ - Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5001/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5001",
+              "path": ["users"]
+            }
+          }
+        },
+        {
+          "name": "READ - Get Single User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5001/users/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5001",
+              "path": ["users", "1"]
+            }
+          }
+        },
+        {
+          "name": "CREATE - Add New User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"test_user\",\n  \"email\": \"test@example.com\",\n  \"full_name\": \"Test User\",\n  \"phone\": \"+1555000000\",\n  \"address\": \"456 Test Ave\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5001/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5001",
+              "path": ["users"]
+            }
+          }
+        },
+        {
+          "name": "UPDATE - Update User",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phone\": \"+1999999999\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5001/users/6",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5001",
+              "path": ["users", "6"]
+            }
+          }
+        },
+        {
+          "name": "DELETE - Remove User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5001/users/6",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5001",
+              "path": ["users", "6"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Order Service",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": [""]
+            }
+          }
+        },
+        {
+          "name": "READ - Get All Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/orders",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["orders"]
+            }
+          }
+        },
+        {
+          "name": "READ - Get Single Order",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/orders/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["orders", "1"]
+            }
+          }
+        },
+        {
+          "name": "CREATE - Add New Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_id\": 2,\n  \"book_id\": 3,\n  \"quantity\": 5,\n  \"status\": \"pending\",\n  \"total_price\": 99.95\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/orders",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["orders"]
+            }
+          }
+        },
+        {
+          "name": "UPDATE - Update Order",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"shipped\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/orders/6",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["orders", "6"]
+            }
+          }
+        },
+        {
+          "name": "DELETE - Remove Order",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/orders/6",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["orders", "6"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
