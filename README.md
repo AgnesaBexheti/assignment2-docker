@@ -323,18 +323,6 @@ Each service uses unique database credentials:
 | User | MySQL | user-db | user_user | user_pass | user_db |
 | Order | MySQL | order-db | order_user | order_pass | order_db |
 
-## Features
-
-- ✅ Independent microservices architecture
-- ✅ Each service has its own database
-- ✅ Different technologies (Python/Flask, PHP)
-- ✅ Different database systems (PostgreSQL, MySQL)
-- ✅ Full CRUD operations
-- ✅ Docker containerization
-- ✅ Data persistence with Docker volumes
-- ✅ Health checks for databases
-- ✅ Pre-populated sample data
-- ✅ RESTful API design
 
 ## Troubleshooting
 
